@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Confirmation</title>
+  <!-- Add your styling or include a common CSS file if needed -->
+</head>
+<body>
+
+<h2>Delete License</h2>
+
+<form th:object="${licenseToDelete}" th:action="@{/deleteLicense}" method="post">
+  <p>Are you sure you want to delete the license with ID: <span th:text="${licenseToDelete.id}"></span>?</p>
+  <input type="hidden" id="licenseId" name="licenseId" th:value="${licenseToDelete.id}" />
+  <button type="submit">Confirm Delete</button>
+</form>
+
+</body>
+</html>
